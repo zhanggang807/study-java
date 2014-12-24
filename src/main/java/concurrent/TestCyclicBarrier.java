@@ -25,7 +25,6 @@ public class TestCyclicBarrier {
 				public void run() {
 					try {
 						Thread.sleep(random.nextInt(1000));
-						
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
