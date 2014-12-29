@@ -26,8 +26,5 @@ public class TestXstream {
 		obj.setUsers(users);
 		System.out.println(xStream.toXML(obj));
 	}
-	/**
-	 * 要想在result集合里的item上加一个父标签
-	 * 必须加一个对象,里面放一个集合才行
-	 */
+	
 }

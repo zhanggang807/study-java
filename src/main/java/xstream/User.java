@@ -1,10 +1,13 @@
 package xstream;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+
 /**
  * 测试对象
  * @author dean
  *
  */
+@XStreamAlias("user")
 public class User {
 	
 	private String userName;
