@@ -5,6 +5,9 @@ public class TestMultiThread {
 	
 	private int totalNum = 100000;
 
+	Object lock1 = new Object();
+	Object lock2 = new Object();
+	
 	
 	public static void main(String[] args) {
 		TestMultiThread thread = new TestMultiThread();
@@ -18,14 +21,19 @@ public class TestMultiThread {
 		
 	}
 
-	public synchronized void minus(){
-		totalNum = totalNum - 2;
-		System.out.println("minus 2 : " + Thread.currentThread().getName() + " : " + totalNum);
+	public void minus(){
+		synchronized (lock1) {
+			totalNum = totalNum - 2;
+			System.out.println("minus 2 : " + Thread.currentThread().getName() + " : " + totalNum);
+			
+		}
 	}
 	
-	public synchronized void plus(){
-		totalNum = totalNum + 1;
-		System.out.println("plus  1 : " + Thread.currentThread().getName() + " : " + totalNum);
+	public void plus(){
+		synchronized (lock2) {
+			totalNum = totalNum + 1;
+			System.out.println("plus  1 : " + Thread.currentThread().getName() + " : " + totalNum);
+		}
 	}
 
 	/** 获得 totalNum */
